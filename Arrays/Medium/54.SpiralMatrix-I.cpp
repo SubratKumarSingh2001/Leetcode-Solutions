@@ -1,6 +1,8 @@
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        //TC: O(m*n), Worse case the loop will run m*n times where m is no.of rows and n is no.of cols
+        //SC: O(m*n), as array contains all elements of matrix so total- elements is m*n.
         int m = matrix.size(); //no. of rows
         int n = matrix[0].size(); //no. of cols
         int totalCount = m*n;
