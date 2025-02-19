@@ -10,12 +10,10 @@ public:
             }
             else {
                 ListNode* curr = temp->next;
-                if(curr != NULL) {
-                    ListNode* forward = curr->next;
-                    temp->next = forward;
-                    curr->next = NULL;
-                    delete curr;
-                }
+                ListNode* forward = curr->next;
+                temp->next = forward;
+                curr->next = NULL;
+                delete curr;
             }
         }
         return head;
