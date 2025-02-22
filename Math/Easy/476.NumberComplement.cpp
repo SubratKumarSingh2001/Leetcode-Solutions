@@ -2,6 +2,9 @@ class Solution {
 public:
     int bitwiseComplement(int n) {
         //Brute Force: TC: O(logn), SC: O(logn)
+        /* when we are playing with digits then we use mod and divide operator 
+           combination, because we require the digits instead of bits
+        */
         if(n == 0) return 1;
         
         vector<int> ans;
@@ -21,6 +24,10 @@ public:
         return sum;
 
         //Approach:2 Better Space TC: O(logn), SC: O(1)
+        /* when we are playing with bits of any number then we use and, or etc
+           bitwise operator acc. to the requirement and combination with left or
+           right shift operator we we want to move ahead of bits
+        */
         if(n == 0)  return 1;
         int ans=0, i=0;
         while(n) {
