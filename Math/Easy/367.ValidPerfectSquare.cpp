@@ -4,7 +4,7 @@ public:
         //TC: O(logn), SC: O(1)
         int start = 0, end = num;
         /* here we had use long long because when we multiply large mid value with
-        same mid value it may go out of integer rang so we have use long long of 8 
+        same mid value it may go out of integer range so we have use long long of 8 
         bytes  i.e 64 bits which can store the mid*mid large valu considering the 
         integer range 
         */
