@@ -1,6 +1,7 @@
 class Solution {
 public:
     int getDecimalValue(ListNode* head) {
+        //TC: O(n), where n is the length of Linked List, SC: O(1)
         ListNode* temp = head;
         int count = 0;
         while(temp) {
