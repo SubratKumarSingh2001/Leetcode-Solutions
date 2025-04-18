@@ -28,6 +28,9 @@ public:
         //TC: O(n), SC: O(1)
         ListNode* slow = head;
         ListNode* fast = head;
+        /*Here we can also use while(fast) because the fast moves 2 nodes ahead compare to slow so the fast pointer will reach the last node of LL 
+        before slow pointer thats why we can use only while(fast)
+        */
         while(slow && fast) {
             /*slow pointer is able to move one node ahead if fast pointer is able to move 
             two nodes ahead
