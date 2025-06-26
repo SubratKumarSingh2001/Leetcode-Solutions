@@ -1,8 +1,8 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        //Brute Force Method : Not In-place method 
-        //TC: O(n), SC: 0(n) (For In-place the SC should be O(1))
+        //Brute Force: Not In-place 
+        //TC: O(n), SC: O(n)
         vector<int> ans;
         ans.push_back(nums[0]);
         for(int i=1; i<nums.size(); i++) {
@@ -10,8 +10,20 @@ public:
                 ans.push_back(nums[i]);
             }
         }
-        nums = ans; // this make changes in original array i.e in-place algo
+        //we have to modify original array
+        nums = ans
+        return nums.size();
 
-        return ans.size();
+        //Optimal Solutio: Two-Pointers Approach
+        //TC: O(n), SC: O(1)
+        int i=0, j=1; //i: hold the last unique element and j: traverse through the array
+        while(j < nums.size()) {
+            if(nums[i] != nums[j]) {
+                nums[i+1] = nums[j];
+                i++;
+            }
+            j++;
+        }
+        return i+1;
     }
 };
