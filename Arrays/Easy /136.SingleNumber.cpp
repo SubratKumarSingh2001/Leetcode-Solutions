@@ -51,3 +51,37 @@ public:
         return ans;
     }
 };
+
+//Another way 
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        //Brute Force
+        //TC: O(n^2), SC: O(1)
+        for(int i=0; i<nums.size(); i++) {
+            int cnt=0;
+            for(int j=0; j<nums.size(); j++) {
+                if(nums[i] == nums[j]) cnt++;
+            }
+            if(cnt == 1) return nums[i];
+        }
+        return -1;
+
+        //Better Solution1: Sorting the array
+        //TC: O(nlogn), SC: O(logn)
+        sort(nums.begin(), nums.end());
+        for(int i=0; i+1<nums.size(); i+=2) {
+            if(nums[i] != nums[i+1]) {
+                return nums[i];
+            }
+        }
+        return nums[nums.size()-1];
+
+        //Optimal Solution: Using XOR 
+        int single=0;
+        for(int i=0; i<nums.size(); i++) {
+            single ^= nums[i];
+        }
+        return single;
+    }
+};
