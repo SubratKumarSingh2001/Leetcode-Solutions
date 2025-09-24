@@ -23,5 +23,10 @@ public:
             n /= 2;
         }
         return false;
+
+        //Approwch:3 Bit Manipulation 
+        //power of 2 means 2^k where k >= 0 1,2,4,8,16..... so negative no cant be raised in power of 2. So if any -ve no return false 
+        if(n <= 0) return false;
+        return (n & (n-1)) == 0 ? true : false;
     }
 };
