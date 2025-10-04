@@ -9,5 +9,14 @@ public:
             n = n>>1;
         }
         return cnt;  
+
+        //TC: O(no.of set bits), SC: O(1)
+        int cnt = 0;
+        while(n) {
+            //Brian Kernighan's Algorithm
+            n = n & (n-1);
+            cnt++;
+        }
+        return cnt;
     }
 };
