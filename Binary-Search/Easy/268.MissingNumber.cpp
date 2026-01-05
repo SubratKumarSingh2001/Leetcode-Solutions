@@ -2,8 +2,8 @@ class Solution {
 public:
     int missingNumber(vector<int>& nums) {
         //Approach:1
-        TC: O(nlogn), due to sort funtion, SC: O(n)
-        we will sort the array
+        // TC: O(nlogn), due to sort funtion, SC: O(n)
+        // we will sort the array
         sort(nums.begin(), nums.end());
         int start=0, end=nums.size()-1;
         int mid = start + (end-start)/2;
