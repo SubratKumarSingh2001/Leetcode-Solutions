@@ -36,9 +36,9 @@ public:
         return count;
 
         //Approach:2 Binary Search
-        //TC: O(*logn + logn) = O(n*logn), SC: O(n)
+        //TC: O(n*logn + logn) = O(n*logn), SC: O(n)
         sort(arr2.begin(), arr2.end());
-        //we will fin the upper and lower bound of each arr[i]+d if both exist cnt++
+        //we will find the upper and lower bound of each arr[i]+d if both exist cnt++
         int cnt=0;
         for(int num : arr1) {
             if(isValidElement(arr2, num, d)) {
